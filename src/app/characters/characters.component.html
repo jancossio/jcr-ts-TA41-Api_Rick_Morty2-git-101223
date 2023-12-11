@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+    @for (character of characters; track $index) {
+        <div class="card" style="width: 300px">
+            <img class="card-img-top" src={{character.image}} alt="Card image cap" >
+            <div class="card-body">
+              <h5 class="card-title">{{character.name}}</h5>
+              <a routerLink="/characters/{{character.id}}" class="btn btn-warning d-flex justify-content-center">See more</a>
+            </div>
+          </div>
+    }
+    </div> 
+</div>
