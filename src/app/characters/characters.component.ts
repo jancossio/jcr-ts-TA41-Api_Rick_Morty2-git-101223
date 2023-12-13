@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ComunicateService } from '../comunicate.service'
+import { ComunicateService } from '../services/comunicate.service'
 
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';

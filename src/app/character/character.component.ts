@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ComunicateService } from '../comunicate.service'
+import { ComunicateService } from '../services/comunicate.service'
 
 
 @Component({
@@ -23,7 +23,7 @@ export class CharacterComponent {
   }
 
   getCharacter(){
-    console.log("Calling...");
+    console.log("Calling..."+this.id);
     this.service.getCharacter(this.id)
     .subscribe(result => {
       this.character = result;

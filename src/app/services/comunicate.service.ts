@@ -14,7 +14,6 @@ export class ComunicateService {
   constructor(private httpClient:HttpClient) { }
 
   getCharacter(idChar:string){
-    console.log(this.httpClient.get(this.characters+idChar));
     return this.httpClient.get(this.characters+idChar);   
   }
 
@@ -24,12 +23,17 @@ export class ComunicateService {
   }
 
   getRandomCharacters(numChars:number){
-    let id='';
-    let tmp=0;
-    for(let i=0; i<numChars; i++){
-      tmp = Math.floor(Math.random()*(this.maxCharacters-1)+1);
-      id += (String(tmp)+',');
+    const randIds:number[] = [];
+    let tmp = 0;
+
+  while(0<numChars){
+    tmp = Math.floor((Math.random()*(this.maxCharacters-1))+1);
+    if(!randIds.includes(tmp)){
+      randIds.push(tmp);
+      numChars--;
     }
-    return this.httpClient.get(this.characters+id);
+  }
+    const ids = randIds.join(',');
+    return this.httpClient.get(this.characters+ids);
   }
 }
