@@ -33,7 +33,7 @@ export class ComunicateService {
       numChars--;
     }
   }
-    const ids = randIds.join(',');
-    return this.httpClient.get(this.characters+ids);
+    const idChars = randIds.join(',');
+    return this.httpClient.get(this.characters+idChars);
   }
 }
